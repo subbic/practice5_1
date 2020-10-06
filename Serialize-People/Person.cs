@@ -28,11 +28,7 @@ namespace Serialize_People
         {
             return name + " was born on " + dateOfBirth.ToShortDateString() + " and is " + age.ToString() + " years old.";
         }
-    void IDeserializationCallback.OnDeserialization(Object sender)
-    {
-      // ѕосле десериализации вычисл€ем возраст 
-      CalculateAge();
-    }
+ 
 
     private void CalculateAge()
         {
@@ -45,5 +41,10 @@ namespace Serialize_People
                 age--;
             }
         }
+    void IDeserializationCallback.OnDeserialization(Object sender)
+    {
+      // ѕосле десериализации вычисл€ем возраст 
+      CalculateAge();
     }
+  }
 }
